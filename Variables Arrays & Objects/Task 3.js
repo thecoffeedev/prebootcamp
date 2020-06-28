@@ -224,7 +224,7 @@ friends = [...friendLi]; // Converting back without titles.
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-// 4. Concat all the names the friends array and return as comma “,” seperated string.
+// 4. Concat all the names the friends array and return as comma "," seperated string.
 
 var namesJoin = friends.join(",");
 
@@ -324,4 +324,76 @@ var average = sum / count;
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-// Print the contents of the input variable
+// Print the contents of the input variable.
+
+var input = [
+    ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"],
+    ["0002", "Dika Sembiring", "Medan", "10/10/1992", "Bermain Gitar"],
+    ["0003", "Winona", "Ambon", "25/12/1965", "Memasak"],
+    ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
+    ];
+
+function data_Handling(input){
+    for (var i = 0; i < input.length; i++) {
+        for (var j = 0; j < input[i].length; j++) {
+            console.log(input[i][j]);
+        }
+    }
+}
+data_Handling(input);
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*---Objects:---*/
+
+// What the output?
+
+// var myobject = {1:one,"11":1,"name":"arun"} // Given & error. the one* should be inside "this" => "one"
+var myobject = {1:"one","11":1,"name":"arun"}; // Given & error. the one* should be inside "this" => "one"
+
+// console.log(myobject.11); //We will get error when we call number literal in dot notation even if it is a string.
+console.log(myobject[11]); // So here we use bracket notation.
+
+console.log(myobject.name);
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+// Add a new key value pair to myobject
+// key : ten
+// value : ten
+
+myobject = {1:"one","11":1,"name":"arun"};
+
+myobject.ten = "ten";
+
+console.log(myobject);
+
+// {"1":"one","11":1,"name":"arun","ten":"ten"} // Quotes might not get displayed that fine.
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+// Write out an object literal to represent the data below.
+// Guvi, Geek, 6, IIT-M RP,Chennai.
+
+var thisObject = {"Guvi" : ["Guvi", "Geek", 6, "IIT-M RP","Chennai"]}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+// How would you represent the following data using a combination of object literals and arrays? 
+// (You can describe a strategy without typing or writing out the whole thing.)
+        // Guvi, Geek, 6, IIT-M RP,Chennai.
+        // Amazon, Inc, 31, SP Infocity, Chennai.
+        // Google, Alphabet, 34 Amphitheater Parkway, MountainView.
+        // Tesla, Inc , 32, 333 Santana Row,San Jose.
+
+
+// Adding the items as a list in a string literal that best describes the whole line of data.
+
+var thisObject = {
+"Guvi" : ["Guvi", "Geek", 6, "IIT-M RP", "Chennai"], 
+"Amazon" : ["Amazon", "Inc", 31, "SP Infocity", "Chennai"],
+"Google": ["Google", "Alphabet", 34, "Amphitheater Parkway", "MountainView"],
+"Tesla" : ["Tesla", "Inc", 32, "333 Santana Row", "San Jose"]
+}
