@@ -1,0 +1,874 @@
+Find the culprit
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert( "I'm JavaScript!');
+ </script>
+ Whats the error in this ?
+</body>
+</html>
+
+/*-----Solution:-----*/
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      alert("I'm JavaScript!"); // changed last single quote to double quote
+    </script>
+    Whats the error in this ?
+  </body>
+</html>
+
+------------------------------------------------------------------------------------------------
+
+Find the culprit and invoke the alert
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+scripts.js :
+
+alert("I'm invoked!");
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+script.js : // Changed from scripts.js to script.js
+
+alert("I'm invoked!");
+
+------------------------------------------------------------------------------------------------
+
+Explain the below how it works
+
+explain.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js :
+
+alert("I'm JavaScript!"); // this prints the text "I'm JavaScript!"
+alert('Hello') // this line is not having semicolon
+alert(`Wor
+ ld`)
+alert(3 +
+1
++ 2); // this is multiple line code and its working
+
+
+/*-----Solution:-----*/
+
+// semicolon is not necessary after version ES6 because of the feature called Automatic Semicolon Insertion (ASI).
+// Backtick  ` `  is used for multiple line strings or when we want to interpolate an expression within the string.
+// Multiple line code will work in js because of smart ASI (Automatic Semicolon Insertion) feature which identifies -
+   the statement and will not insert semicolon in between the statement as semicolon clarifies as the end of the line.
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the below to alert Guvi geek
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js :
+
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+lname;
+alert( admin ); // "Guvi geek"
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname + " " + lname;  // Added a space in between.
+alert( admin ); // "Guvi geek"
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the below to alert hello Guvi geek
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+let name = fname+lname;
+alert( 'hello ${name}' );
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let fname = 10.5; 
+fname = "Guvi";
+lname = "geek"
+let name = fname + " " + lname;  // Added a space between.
+alert( `hello ${name}` );       // And changed the quotes to Backticks to allow embedded expression or variable.
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the below to alert sum of two numbers
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(a + b);
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(parseInt(a) + parseInt(b)); // Type casted to numbers from string type.
+
+
+------------------------------------------------------------------------------------------------
+
+If you run the below scritpt you will get “Code is Blasted”
+Explain Why the Code is blasted and how to diffuse it and get “Diffused”.
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+var a = "2" > "12";
+//Don't touch below this
+if (a) {
+  console.log("Code is Blasted")
+}
+else
+{
+  console.log("Diffused") 
+}
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+var a = "2" < "12";   // Changed ">" => "<" because string (according to ASCII) or number 12 is always -
+                         greater than string (consider ASCII) or number 2.
+//Don't touch below this
+if (a) {
+  console.log("Code is Blasted")
+}
+else
+{
+  console.log("Diffused") 
+}
+
+
+------------------------------------------------------------------------------------------------
+
+How to get the success in console.
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js :
+
+let a = prompt("Enter a number?");
+//Don't modify any code below this
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let a;      // Either enter nothing in the prompt (let a = prompt("Enter a number?");) or lets create empty variable like this...
+//Don't modify any code below this
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+
+
+------------------------------------------------------------------------------------------------
+
+How to get the correct score in console.
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let value = prompt('How many runs you scored in this ball');
+if (value === 4) {
+      console.log("You hit a Four");
+} else if (value === 6) {
+      console.log("You hit a Six");
+} else {
+      console.log("I couldn't figure out");
+}
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let value = prompt('How many runs you scored in this ball');
+
+if (value == 4) {               // used == instead of === because value is of type string and 4 is of type number.
+      console.log("You hit a Four");
+} else if (value == 6) {        // same as above. == wont check type. but === will. with ==  "4" and 4 are equal. "4" == 4 is true.
+      console.log("You hit a Six");
+} else {
+      console.log("I couldn't figure out");
+}
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the code to welcome the Employee
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let login = 'Employee';
+let message = (login == 'Employee') ? :
+  (login == 'Director') ? 'Greetings' :
+  (login == '') ? 'No login' :
+  '';
+console.log(message);
+
+
+/*-----Solution:-----*/
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let login = 'Employee';
+let message = (login == 'Employee') ? 'Welcome': // Added 'Welcome after ? (if).
+  (login == 'Director') ? 'Greetings' :
+  (login == '') ? 'No login' :
+  '';
+console.log(message);
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the code to welcome the boss
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js :
+
+// You cant change the value of the msg
+let message;
+if (null || 2 || undefined )
+{
+ let message = "welcome boss";
+}
+else
+{
+ let message = "Go away";
+}
+  console.log(message);
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let message;
+if ( null || 2 || undefined )
+{
+ message = "welcome boss";  // deleted let to avoid multiple variable declaration and assigning to the same variable.
+}
+else
+{
+ message = "Go away";      // that applies here too. Scope of the variables plays here too...
+}
+
+console.log(message);
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the code to welcome the boss
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let message;
+let lock = 2;
+//Dont change any code below this 
+if (null || lock || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+  console.log(message);
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+// You cant change the value of the msg
+let message;
+let lock = 0;   // just changed the value of lock to 0.
+
+//Dont change any code below this 
+if (null || lock || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+
+console.log(message);
+
+
+------------------------------------------------------------------------------------------------
+
+Fix the code to welcome the boss
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let message;
+let lock = 2;
+//Dont change any code below this
+if (lock && " " || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+console.log(message);
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let message;
+let lock = 0;   // just changed the value of lock to 0.
+
+//Dont change any code below this
+if (lock && " " || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+console.log(message);
+
+
+------------------------------------------------------------------------------------------------
+
+Change the code to print
+
+3
+2
+1
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+//You can change only 2 characters
+let i = 3;
+while (i) {
+  console.log( --i );
+}
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+//You can change only 2 characters
+let i = 3;
+while (i) {
+  console.log( i-- ); //Changed "--i" to "i--" which gives the value and then reduces.
+}
+
+
+------------------------------------------------------------------------------------------------
+
+Change the code to print 1 to 10 in 4 lines
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let num = 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+for (var i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+
+------------------------------------------------------------------------------------------------
+
+Change the code to print even numbers
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+//You are allowed to modify only one character 
+for (let num = 2; num <= 20; num += 1) {
+  console.log(num)
+}
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+//You are allowed to modify only one character 
+for (let num = 2; num <= 20; num += 2) {    // Changed 'num += 1' to 'num += 2'.
+    console.log(num)
+  }
+
+
+------------------------------------------------------------------------------------------------
+
+Change the code to print all the gifts
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log('Wrapped ${'gifts[i]'} and added a bow!');
+}
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);  // Deleted quotes inside the variable container and contained the whole in Backticks.
+}
+
+
+------------------------------------------------------------------------------------------------
+
+
+Fix the code to disarm the bomb.
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+
+script.js :
+
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+}
+
+
+
+/*-----Solution:-----*/
+
+
+fix.html :
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+script.js :
+
+let countdown = 100;
+while (countdown < 0) {  // Changed '>' to '<' to disarm bomb as the countdown / loop wont work.
+  countdown--;
+  if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+}
+
+
+------------------------------------------------------------------------------------------------
+
+Whats the msg printed and why?
+
+var lemein = "0";
+var lemeout = 0;
+var msg = "";
+if (lemein) {
+ msg += "hi";
+ }
+if (lemeout) {
+ msg += 'Hello';
+}
+console.log(msg);
+
+// Message "hi" is printed because, string "0" is considered as true and number 0 is considered as false.
+// here lemein is string "0" and considered as true in if statement. so msg is updated to "hi".
+// here lemeout is number 0 and considered as false in if statement. so msg is not updated to "Hello".
